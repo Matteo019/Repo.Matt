@@ -3,7 +3,7 @@
 
 int yy, mm, dd, days_left_to_add, sorry, year;
 int days_in_month[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
+char month[3];
 bool is_leap_year(int year) {
   if (year % 4 != 0) {
     return false;
@@ -38,7 +38,6 @@ while (days_left_to_add > 0) {
     days_left_to_add = 0; 
   }
     } 
-    printf("%d %d %d\n", *mm, *dd, *yy);
 }
     
   int Requisits(int* yy, int* mm, int* dd, int* sorry){
@@ -51,12 +50,70 @@ while (days_left_to_add > 0) {
     printf("please enter a valid number between 1 and 12 for the month\n");
     *sorry = *sorry + 1;
   }
+
+
   if (*dd < 1 || *dd > 31){
     printf("please enter a valid number between 10 and 31 for the day\n");
     *sorry = *sorry + 1;
   }
 }
- 
+int printmonth(int *mm){
+
+
+      switch (*mm) {
+
+        case 1:
+        printf("Jan");
+        break;
+
+        case 2:
+        printf("Feb");
+        break;
+
+        case 3:
+        printf("Mar");
+        break;
+
+        case 4:
+        printf("Apr");
+        break;
+
+        case 5:
+        printf("May");
+        break;
+
+        case 6:
+        printf("Jun");
+        break;
+
+        case 7:
+        printf("Jul");
+        break;
+
+        case 8:
+        printf("Aug");
+        break;
+
+        case 9:
+        printf("Set");
+        break;
+
+        case 10:
+        printf("Oct");
+        break;
+
+        case 11:
+        printf("Nov");
+        break;
+
+        case 12:
+        printf("Dec");
+        break;
+
+        default:
+        break;
+      }
+}
 
 int main() {
 
@@ -67,9 +124,14 @@ printf("Insert today's date as 'mm, dd, yy':\n");
   Requisits(&yy, &mm, &dd, &sorry);
   if(sorry == 0){
 
+
+
+
 printf("Insert the numbers of day's that you want to add:\n");
       scanf("%05d", &days_left_to_add);
 
     add_days_to_date(&mm, &dd, &yy, days_left_to_add); 
+    printmonth(&mm);
+    printf(" %d %d\n", dd, yy);
   }
 }
