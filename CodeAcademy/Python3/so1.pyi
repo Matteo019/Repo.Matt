@@ -1,3 +1,10 @@
+a, c, b = None, None, None
+
+if a == None:
+    print(' return 1')
+
+
+
 exo_kill = 2
 exo_nonkill = exo_kill
 exo_nonkill ** exo_kill
