@@ -124,9 +124,6 @@ printf("Insert today's date as 'mm, dd, yy':\n");
   Requisits(&yy, &mm, &dd, &sorry);
   if(sorry == 0){
 
-
-
-
 printf("Insert the numbers of day's that you want to add:\n");
       scanf("%05d", &days_left_to_add);
 
