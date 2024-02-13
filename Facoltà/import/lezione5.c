@@ -1,12 +1,5 @@
 #include <stdio.h>
-#include <string.h>
 
-int esercizio1 ( ) {
-    int a;
-
-
-
-}
 
 int esercizio2() {
     int size, cont = 0;
