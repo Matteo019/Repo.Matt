@@ -46,23 +46,67 @@ ripetuta di un adeguato numero di volte del valore
 interpreti come caratteri ASCII e lo stampi sul video.*/
 int att3(){
     int A;
+    char B;
     scanf("%d", &A);
-    if(A > 127){
-        do{
+        while(A > 127){
         A -= 128;
-            
-        }while(A > 127);
-    }else if(A < 0){
+        }
+    if(A < 0){
         printf("Numero non valito.");
         return 1;
     }
-    printf("%d", A);
+    B = A;
+    printf("%c", B);
 return 0;
 }
+/*Scrivere un programma in C per la
+rappresentazione del triangolo di Floyd.
+Il triangolo di Floyd è un triangolo rettangolo
+che contiene numeri naturali, definito riempiendo
+le righe del triangolo con numeri consecutivi e
+partendo da 1 nell’angolo in alto a sinistra. Si consideri ad
+esempio il caso N=5. Il triangolo di Floyd e’ il seguente:
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+Il programma riceve da tastiera un numero intero N.
+Il programma visualizza le prime N righe del
+triangolo di Floyd. Suggerimento. Si osserva che il
+numero di valori in ogni riga corrisponde
+all’indice della riga: 1 valore sulla prima riga,
+2 sulla seconda, 3 sulla terza.*/
+int att4(int input){
+    //cifre.
+    
+    int divisor = 1, num = input;
 
+    while(divisor < num){
+        divisor *= 10;
+        if(divisor > num){
+        divisor /= 10;   
+            break;
+        }
+    }
+    printf("%d\n", divisor);
+    while (divisor >= 1){
+            int digit = (num / divisor) % 10;
+            printf("%d", digit);
+    
+        if(divisor > 1){
+            printf(" ,");
+        }
+        divisor /= 10;
+    }
+    
+}
+  
 int main(){
 
-att3();
+    int input;
+    scanf("%d", &input);
+    att4(input);
 
 return 0;
 }
